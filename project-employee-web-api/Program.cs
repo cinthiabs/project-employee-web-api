@@ -1,35 +1,72 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using project_employee_web_api.DataContext;
 using project_employee_web_api.Service.EmployeeService;
 
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-builder.Services.AddScoped<IEmployeeService, EmployeeService>();
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+public class Program
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
+    public static void Main(string[] args)
+    {
+        CreateHostBuilder(args).Build().Run();
+    }
 
-var app = builder.Build();
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.ConfigureServices((hostContext, services) =>
+                {
+                    services.AddControllers();
+                    services.AddEndpointsApiExplorer();
+                    services.AddSwaggerGen();
+                    services.AddCors(options =>
+                    {
+                        options.AddPolicy("CorsPolicy",
+                            builder => builder
+                                .AllowAnyOrigin()
+                                .AllowAnyMethod()
+                                .AllowAnyHeader()
+                                );
+                    });
+                    services.AddMemoryCache();
+                    services.AddScoped<IEmployeeService, EmployeeService>();
+                    services.AddDbContext<ApplicationDbContext>(options =>
+                    {
+                        options.UseSqlServer(hostContext.Configuration.GetConnectionString("DefaultConnection"));
+                    });
+                });
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
+                webBuilder.Configure((hostContext, app) =>
+                {
+                    if (hostContext.HostingEnvironment.IsDevelopment())
+                    {
+                        app.UseSwagger();
+                        app.UseSwaggerUI();
+                    }
+
+                    // Habilitar o CORS
+                    app.UseCors("CorsPolicy");
+
+                    // app.UseHttpsRedirection();
+
+                    app.UseAuthorization();
+
+                    app.UseRouting();
+
+                    app.UseEndpoints(endpoints =>
+                    {
+                        endpoints.MapControllers();
+                    });
+                });
+
+                // Configurar para usar HTTP
+                webBuilder.UseUrls("http://localhost:7289");
+            });
+    public static class ConfigurationHelper
+    {
+        public static string[] CorsOrigins { get; } = new string[] { "http://localhost:7289" };
+    }
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
