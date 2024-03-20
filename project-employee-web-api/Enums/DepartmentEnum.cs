@@ -5,10 +5,10 @@ namespace project_employee_web_api.Enums
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum DepartmentEnum
     {
-        RH,
-        Financeiro,
-        Compras,
-        Atendimento,
-        Zeladoria
+        HR,
+        Financial,
+        Technology,
+        Service,
+        Administration
     }
 }

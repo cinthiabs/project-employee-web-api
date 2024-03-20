@@ -6,8 +6,8 @@ namespace project_employee_web_api.Enums
 
     public enum TurnEnum
     {
-        Manha,
-        Tarde,
-        Noite
+        Morning,
+        Afternoon,
+        Evening
     }
 }

@@ -65,8 +65,4 @@ public class Program
                 // Configurar para usar HTTP
                 webBuilder.UseUrls("http://localhost:7289");
             });
-    public static class ConfigurationHelper
-    {
-        public static string[] CorsOrigins { get; } = new string[] { "http://localhost:7289" };
-    }
 }
