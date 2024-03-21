@@ -1,4 +1,4 @@
-# About Project 
+# About this Project 
 This project was generated with `.Net 6.0` and `SQL Server`. It is a Web API for creating, reading, updating, and deleting employee records. 🚀
 
 # Pre-requirements
