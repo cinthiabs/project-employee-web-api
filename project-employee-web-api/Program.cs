@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using project_employee_web_api.DataContext;
 using project_employee_web_api.Service.EmployeeService;
+using project_employee_web_api.Service.UserService;
 
 public class Program
 {
@@ -33,6 +34,7 @@ public class Program
                     });
                     services.AddMemoryCache();
                     services.AddScoped<IEmployeeService, EmployeeService>();
+                    services.AddScoped<IUserService, UserService>();
                     services.AddDbContext<ApplicationDbContext>(options =>
                     {
                         options.UseSqlServer(hostContext.Configuration.GetConnectionString("DefaultConnection"));

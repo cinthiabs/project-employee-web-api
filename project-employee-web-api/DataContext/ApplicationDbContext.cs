@@ -10,6 +10,7 @@ namespace project_employee_web_api.DataContext
 
         }
         public DbSet<EmployeeModel> Employee { get; set; }
+        public DbSet<User> User { get; set; }
 
     }
 }

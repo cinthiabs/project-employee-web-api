@@ -128,9 +128,10 @@ C:\GITHUB\project-employee-web-api\project-employee-web-api\obj\Debug\net6.0\sta
 C:\GITHUB\project-employee-web-api\project-employee-web-api\obj\Debug\net6.0\staticwebassets.build.json
 C:\GITHUB\project-employee-web-api\project-employee-web-api\obj\Debug\net6.0\staticwebassets.development.json
 C:\GITHUB\project-employee-web-api\project-employee-web-api\obj\Debug\net6.0\scopedcss\bundle\project-employee-web-api.styles.css
-C:\GITHUB\project-employee-web-api\project-employee-web-api\obj\Debug\net6.0\project-employee-web-api.csproj.CopyComplete
 C:\GITHUB\project-employee-web-api\project-employee-web-api\obj\Debug\net6.0\project-employee-web-api.dll
 C:\GITHUB\project-employee-web-api\project-employee-web-api\obj\Debug\net6.0\refint\project-employee-web-api.dll
 C:\GITHUB\project-employee-web-api\project-employee-web-api\obj\Debug\net6.0\project-employee-web-api.pdb
 C:\GITHUB\project-employee-web-api\project-employee-web-api\obj\Debug\net6.0\project-employee-web-api.genruntimeconfig.cache
 C:\GITHUB\project-employee-web-api\project-employee-web-api\obj\Debug\net6.0\ref\project-employee-web-api.dll
+C:\GITHUB\project-employee-web-api\project-employee-web-api\obj\Debug\net6.0\project-employee-web-api.sourcelink.json
+C:\GITHUB\project-employee-web-api\project-employee-web-api\obj\Debug\net6.0\project-.3A7E33C9.Up2Date
