@@ -23,7 +23,23 @@ namespace project_employee_web_api.Controllers
         [HttpPost]
         public async Task<ActionResult<ServiceResponse<List<User>>>> CreateEmployee(User User)
         {
-            return Ok(await _userService.CreateEmployee(User));
+            var result = await _userService.CreateEmployee(User);
+            if (result.Sucesso == true)
+
+                return Ok(result);
+            else
+                return BadRequest(result);
+        }
+        [HttpGet("sendEmail")]
+        public async Task<ActionResult<ServiceResponse<string>>> SendEmail(string email)
+        {
+            var result = await _userService.SendEmail(email);
+            if(result.Sucesso == true)
+            
+                return Ok(result);
+            else
+                return BadRequest(result);
+               
         }
 
 

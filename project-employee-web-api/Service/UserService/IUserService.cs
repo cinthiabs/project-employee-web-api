@@ -7,6 +7,7 @@ namespace project_employee_web_api.Service.UserService
         Task<ServiceResponse<User>> GetUser(string email, string password);
         Task<ServiceResponse<List<User>>> CreateEmployee(User User);
         Task<ServiceResponse<List<User>>> UpdateEmployee(User User);
-        Task<ServiceResponse<List<User>>> SendEmail(User User);
+        Task<ServiceResponse<string>> SendEmail(string email);
+
     }
 }

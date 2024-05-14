@@ -1,17 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using project_employee_web_api.DataContext;
 using project_employee_web_api.Models;
-using System.Security.Cryptography;
-using System.Text;
+using System.Net.Mail;
+using System.Net;
+
 
 namespace project_employee_web_api.Service.UserService
 {
     public class UserService : IUserService
     {
         private readonly ApplicationDbContext _context;
-        public UserService(ApplicationDbContext context)
+        private readonly IConfiguration _configuration;
+
+        public UserService(ApplicationDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
         public async Task<ServiceResponse<List<User>>> CreateEmployee(User User)
         {
@@ -65,8 +69,6 @@ namespace project_employee_web_api.Service.UserService
                 }
                 else
                 {
-                    //string senha = Decrypt(user.Senha);
-                   // user.Senha = senha;
                     serviceResponse.Dados = user;
                     serviceResponse.Sucesso = true;
                 }
@@ -81,9 +83,49 @@ namespace project_employee_web_api.Service.UserService
             return serviceResponse;
         }
 
-        public Task<ServiceResponse<List<User>>> SendEmail(User User)
+        public async Task<ServiceResponse<string>> SendEmail(string userEmailDestinatario)
         {
-            throw new NotImplementedException();
+            ServiceResponse<string> response = new ServiceResponse<string>();
+
+            var user = await _context.User.FirstOrDefaultAsync(x => x.Email == userEmailDestinatario);
+            if (user == null)
+            {
+                response.Sucesso = false;
+                response.Mensagem = "Email não cadastrado!";
+                return response;
+            }
+            else
+            {
+                string smtpServer = _configuration["EmailSettings:SmtpServer"];
+                int port = int.Parse(_configuration["EmailSettings:Port"]);
+                string userNameOrigem = _configuration["EmailSettings:UserNameOrigem"];
+                string password = _configuration["EmailSettings:EncryptedPassword"];
+
+
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress(userNameOrigem);
+                mail.To.Add(new MailAddress(userEmailDestinatario));
+                mail.Subject = "Redefinição de senha";
+                mail.Body = $"Olá, \n\nVocê solicitou uma redefinição de senha. Para continuar, clique no link a seguir: http://localhost:4200/reset/{userEmailDestinatario} \n\nSe você não solicitou esta alteração, ignore este e-mail.\n\nAtenciosamente, ";
+
+                SmtpClient smtpClient = new SmtpClient(smtpServer, port);
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new NetworkCredential(userNameOrigem, password);
+                smtpClient.EnableSsl = true;
+
+                try
+                {
+                    await smtpClient.SendMailAsync(mail);
+                    response.Sucesso = true;
+                    response.Mensagem = "E-mail enviado com sucesso!";
+                }
+                catch (Exception ex)
+                {
+                    response.Sucesso = false;
+                    response.Mensagem = "Erro ao enviar o e-mail: " + ex.Message;
+                }
+            }
+            return response;
         }
 
         public Task<ServiceResponse<List<User>>> UpdateEmployee(User User)
@@ -91,26 +133,6 @@ namespace project_employee_web_api.Service.UserService
             throw new NotImplementedException();
         }
 
-        private string Hash(string senha)
-        {
-            using (var sha256 = SHA256.Create())
-            {
-                byte[] bytes = Encoding.UTF8.GetBytes(senha);
-                byte[] hashBytes = sha256.ComputeHash(bytes);
-                return Convert.ToBase64String(hashBytes);
-            }
-        }
-        public static string Decrypt(string encryptedText)
-        {
-            using (var sha256 = SHA256.Create())
-            {
-                byte[] bytes = Convert.FromBase64String(encryptedText);
-                byte[] originalBytes = sha256.ComputeHash(bytes);
-                string originalSenha = Encoding.UTF8.GetString(originalBytes);
-                return originalSenha;
-            }
-        }
-
-
+        
     }
 }

@@ -15,12 +15,20 @@
       "RelativeMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|solutionrelative:project-employee-web-api\\service\\userservice\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|c:\\github\\project-employee-web-api\\project-employee-web-api\\datacontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|solutionrelative:project-employee-web-api\\datacontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|c:\\github\\project-employee-web-api\\project-employee-web-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|solutionrelative:project-employee-web-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|c:\\github\\project-employee-web-api\\project-employee-web-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|solutionrelative:project-employee-web-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|c:\\github\\project-employee-web-api\\project-employee-web-api\\project-employee-web-api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}",
+      "RelativeMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|solutionrelative:project-employee-web-api\\project-employee-web-api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|c:\\github\\project-employee-web-api\\project-employee-web-api\\datacontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|solutionrelative:project-employee-web-api\\datacontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|c:\\github\\project-employee-web-api\\project-employee-web-api\\models\\employeemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,14 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|c:\\github\\project-employee-web-api\\project-employee-web-api\\enums\\turnenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|solutionrelative:project-employee-web-api\\enums\\turnenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|c:\\github\\project-employee-web-api\\project-employee-web-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|solutionrelative:project-employee-web-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|c:\\github\\project-employee-web-api\\project-employee-web-api\\project-employee-web-api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}",
-      "RelativeMoniker": "D:0:0:{76DC5930-085E-4537-9CB5-BCF81735E9A2}|project-employee-web-api\\project-employee-web-api.csproj|solutionrelative:project-employee-web-api\\project-employee-web-api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}"
     }
   ],
   "DocumentGroupContainers": [
@@ -60,7 +60,7 @@
               "RelativeDocumentMoniker": "project-employee-web-api\\Service\\UserService\\UserService.cs",
               "ToolTip": "C:\\GITHUB\\project-employee-web-api\\project-employee-web-api\\Service\\UserService\\UserService.cs",
               "RelativeToolTip": "project-employee-web-api\\Service\\UserService\\UserService.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAmwDUAAAAIAAAA",
+              "ViewState": "AQIAAGEAAAAAAAAAAAAAAFIAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-09T15:06:12.159Z",
               "IsPinned": true,
@@ -74,7 +74,7 @@
               "RelativeDocumentMoniker": "project-employee-web-api\\Controllers\\UserController.cs",
               "ToolTip": "C:\\GITHUB\\project-employee-web-api\\project-employee-web-api\\Controllers\\UserController.cs",
               "RelativeToolTip": "project-employee-web-api\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAewBMAAAAJAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowCoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-09T15:05:10.446Z",
               "IsPinned": true,
@@ -85,6 +85,10 @@
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "IUserService.cs",
@@ -92,14 +96,14 @@
               "RelativeDocumentMoniker": "project-employee-web-api\\Service\\UserService\\IUserService.cs",
               "ToolTip": "C:\\GITHUB\\project-employee-web-api\\project-employee-web-api\\Service\\UserService\\IUserService.cs",
               "RelativeToolTip": "project-employee-web-api\\Service\\UserService\\IUserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAhAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-09T22:00:31.083Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\GITHUB\\project-employee-web-api\\project-employee-web-api\\DataContext\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "project-employee-web-api\\DataContext\\ApplicationDbContext.cs",
@@ -107,12 +111,11 @@
               "RelativeToolTip": "project-employee-web-api\\DataContext\\ApplicationDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-09T14:55:46.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-09T14:55:46.025Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "DepartmentEnum.cs",
               "DocumentMoniker": "C:\\GITHUB\\project-employee-web-api\\project-employee-web-api\\Enums\\DepartmentEnum.cs",
               "RelativeDocumentMoniker": "project-employee-web-api\\Enums\\DepartmentEnum.cs",
@@ -124,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "TurnEnum.cs",
               "DocumentMoniker": "C:\\GITHUB\\project-employee-web-api\\project-employee-web-api\\Enums\\TurnEnum.cs",
               "RelativeDocumentMoniker": "project-employee-web-api\\Enums\\TurnEnum.cs",
@@ -136,19 +139,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\GITHUB\\project-employee-web-api\\project-employee-web-api\\appsettings.json",
               "RelativeDocumentMoniker": "project-employee-web-api\\appsettings.json",
               "ToolTip": "C:\\GITHUB\\project-employee-web-api\\project-employee-web-api\\appsettings.json",
               "RelativeToolTip": "project-employee-web-api\\appsettings.json",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAYwAwAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-17T17:18:38.367Z"
+              "WhenOpened": "2024-03-17T17:18:38.367Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "EmployeeModel.cs",
               "DocumentMoniker": "C:\\GITHUB\\project-employee-web-api\\project-employee-web-api\\Models\\EmployeeModel.cs",
               "RelativeDocumentMoniker": "project-employee-web-api\\Models\\EmployeeModel.cs",
@@ -166,20 +170,22 @@
               "RelativeDocumentMoniker": "project-employee-web-api\\Program.cs",
               "ToolTip": "C:\\GITHUB\\project-employee-web-api\\project-employee-web-api\\Program.cs",
               "RelativeToolTip": "project-employee-web-api\\Program.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA1wBoAAAAVAAAA",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAAAA0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T16:57:20.003Z"
+              "WhenOpened": "2024-03-17T16:57:20.003Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "project-employee-web-api",
               "DocumentMoniker": "C:\\GITHUB\\project-employee-web-api\\project-employee-web-api\\project-employee-web-api.csproj",
               "RelativeDocumentMoniker": "project-employee-web-api\\project-employee-web-api.csproj",
               "ToolTip": "C:\\GITHUB\\project-employee-web-api\\project-employee-web-api\\project-employee-web-api.csproj",
               "RelativeToolTip": "project-employee-web-api\\project-employee-web-api.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-03-22T10:47:37.967Z"
+              "WhenOpened": "2024-03-22T10:47:37.967Z",
+              "EditorCaption": ""
             }
           ]
         }
