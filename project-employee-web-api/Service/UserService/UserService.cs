@@ -4,7 +4,6 @@ using project_employee_web_api.Models;
 using System.Net.Mail;
 using System.Net;
 
-
 namespace project_employee_web_api.Service.UserService
 {
     public class UserService : IUserService
@@ -17,34 +16,47 @@ namespace project_employee_web_api.Service.UserService
             _context = context;
             _configuration = configuration;
         }
-        public async Task<ServiceResponse<List<User>>> CreateEmployee(User User)
+        public async Task<ServiceResponse<List<User>>> GetUserAll()
         {
             ServiceResponse<List<User>> serviceResponse = new ServiceResponse<List<User>>();
             try
             {
-                if (User == null)
+                serviceResponse.Dados =  await _context.User.ToListAsync();
+                if (serviceResponse.Dados.Count == 0)
+                    serviceResponse.Mensagem = "Nenhum dado encontrado!";
+
+            }
+            catch (Exception ex)
+            {
+                serviceResponse.Mensagem = ex.Message;
+                serviceResponse.Sucesso = false;
+            }
+            return serviceResponse;
+        }
+        public async Task<ServiceResponse<User>> Create(User user)
+        {
+            ServiceResponse<User> serviceResponse = new ServiceResponse<User>();
+            try
+            {
+                if (user == null)
                 {
                     serviceResponse.Mensagem = "Informar dados!";
                     serviceResponse.Sucesso = false;
                     return serviceResponse;
                 }
-                //string hashedPassword = Hash(User.Senha);
-                //User.Senha = hashedPassword;
 
-                User user = await _context.User.FirstOrDefaultAsync(x => x.Email == User.Email);
-                if(user != null)
+                User existingUser = await _context.User.FirstOrDefaultAsync(x => x.Email == user.Email);
+                if (existingUser != null)
                 {
                     serviceResponse.Mensagem = "E-mail já cadastrado!";
                     serviceResponse.Sucesso = false;
+                    return serviceResponse;
                 }
-                else
-                {
-                    _context.Add(User);
-                    await _context.SaveChangesAsync();
+                _context.Add(user);
+                await _context.SaveChangesAsync();
 
-                    serviceResponse.Dados = _context.User.ToList();
-                    serviceResponse.Sucesso = true;
-                }
+                serviceResponse.Dados = user;
+                serviceResponse.Sucesso = true;
             }
             catch (Exception ex)
             {
@@ -59,21 +71,18 @@ namespace project_employee_web_api.Service.UserService
             ServiceResponse<User> serviceResponse = new ServiceResponse<User>();
             try
             {
-                User user =  await _context.User.FirstOrDefaultAsync(x => x.Email == email);
+                User user = await _context.User.FirstOrDefaultAsync(x => x.Email == email && x.Senha == password);
+                serviceResponse.Dados = user;
+
                 if (user == null)
                 {
-                    serviceResponse.Dados = null;
-                    serviceResponse.Mensagem = "Usuário não localizado!";
+                    serviceResponse.Mensagem = "Usuário não localizado! Verifique seu email e senha!";
                     serviceResponse.Sucesso = false;
-                    return serviceResponse;
                 }
                 else
                 {
-                    serviceResponse.Dados = user;
                     serviceResponse.Sucesso = true;
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -82,6 +91,44 @@ namespace project_employee_web_api.Service.UserService
             }
             return serviceResponse;
         }
+        public async Task<ServiceResponse<User>> Update(User user)
+        {
+            ServiceResponse<User> serviceResponse = new ServiceResponse<User>();
+            try
+            {
+                if (user == null)
+                {
+                    serviceResponse.Mensagem = "Informar dados!";
+                    serviceResponse.Sucesso = false;
+                    return serviceResponse;
+                }
+
+                User existingUser = await _context.User.FirstOrDefaultAsync(x => x.Email == user.Email);
+                if (existingUser != null)
+                {
+                    existingUser.Senha = user.Senha;
+                    existingUser.ConfirmarSenha = user.ConfirmarSenha;
+                    _context.Update(existingUser);
+                    await _context.SaveChangesAsync();
+
+                    serviceResponse.Dados = user;
+                    serviceResponse.Sucesso = true;
+                }
+                else
+                {
+                    serviceResponse.Mensagem = "Email não cadastrado!";
+                    serviceResponse.Sucesso = false;
+                    return serviceResponse;
+                }
+            }
+            catch (Exception ex)
+            {
+                serviceResponse.Mensagem = ex.Message;
+                serviceResponse.Sucesso = false;
+            }
+            return serviceResponse;
+        }
+
 
         public async Task<ServiceResponse<string>> SendEmail(string userEmailDestinatario)
         {
@@ -127,12 +174,5 @@ namespace project_employee_web_api.Service.UserService
             }
             return response;
         }
-
-        public Task<ServiceResponse<List<User>>> UpdateEmployee(User User)
-        {
-            throw new NotImplementedException();
-        }
-
-        
     }
 }

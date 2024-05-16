@@ -7,7 +7,7 @@ namespace project_employee_web_api.Models
     {
         [Key]
         public int Id { get; set; }
-        public string Nome { get; set; }
+        public string? Nome { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
         public string? ConfirmarSenha { get; set; }

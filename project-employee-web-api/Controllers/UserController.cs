@@ -15,31 +15,32 @@ namespace project_employee_web_api.Controllers
         {
             _userService = userService;
         }
+        [HttpGet("GetUserAll")]
+        public async Task<ActionResult<ServiceResponse<User>>> GetUserAll()
+        {
+            return Ok(await _userService.GetUserAll());
+        }
         [HttpGet]
         public async Task<ActionResult<ServiceResponse<User>>> GetUser(string email, string password)
         {
             return Ok(await _userService.GetUser(email,password));
         }
         [HttpPost]
-        public async Task<ActionResult<ServiceResponse<List<User>>>> CreateEmployee(User User)
+        public async Task<ActionResult<ServiceResponse<List<User>>>> Create(User User)
         {
-            var result = await _userService.CreateEmployee(User);
-            if (result.Sucesso == true)
+            return Ok(await _userService.Create(User));
 
-                return Ok(result);
-            else
-                return BadRequest(result);
         }
-        [HttpGet("sendEmail")]
+        [HttpPost("Update")]
+        public async Task<ActionResult<ServiceResponse<User>>> Update(User user)
+        {
+            return Ok(await _userService.Update(user));
+        }
+        [HttpPost("SendEmail")]
         public async Task<ActionResult<ServiceResponse<string>>> SendEmail(string email)
         {
-            var result = await _userService.SendEmail(email);
-            if(result.Sucesso == true)
-            
-                return Ok(result);
-            else
-                return BadRequest(result);
-               
+            return Ok(await _userService.SendEmail(email));
+           
         }
 
 
