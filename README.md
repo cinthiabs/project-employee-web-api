@@ -20,13 +20,12 @@ The API provides the following endpoints:
     GET /api/Employee/{id}
     PUT /api/Employee/InactiveEmployee
 
-# API Endpoints
-The API provides the following endpoints: 
-   
-    
     GET /api/User/GetUserAll 
     GET /api/User
     POST /api/User
     POST /api/User/Update
-    POST /api/User/SendEmail    
+    POST /api/User/SendEmail   
+
+    
+ 
       
