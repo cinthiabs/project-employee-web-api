@@ -18,34 +18,40 @@ namespace project_employee_web_api.Controllers
         [HttpGet]
         public async Task<ActionResult<ServiceResponse<List<EmployeeModel>>>> GetEmployee()
         {
-            return Ok(await _employeeService.GetEmployee());
+            var result = await _employeeService.GetEmployee();
+            return result.Sucesso ? Ok(result) : NotFound(result);
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<ServiceResponse<EmployeeModel>>> GetEmployeeById(int id)
         {
-            return Ok(await _employeeService.GetEmployeeById(id));  
+            var result = await _employeeService.GetEmployeeById(id);
+            return result.Sucesso ? Ok(result) : NotFound(result);
         }
         [HttpPost]
         public async Task<ActionResult<ServiceResponse<List<EmployeeModel>>>> CreateEmployee(EmployeeModel newEmployee)
         {
-            return Ok(await _employeeService.CreateEmployee(newEmployee));
+            var result = await _employeeService.CreateEmployee(newEmployee);
+            return result.Sucesso ? Ok(result) : NotFound(result);
         }
 
         [HttpPut("InactiveEmployee")]
         public async Task<ActionResult<ServiceResponse<List<EmployeeModel>>>> InactiveEmployee(int id)
         {
-            return Ok(await _employeeService.InactiveEmployee(id));
+            var result = await _employeeService.InactiveEmployee(id);
+            return result.Sucesso ? Ok(result) : NotFound(result);
         }
         [HttpPut]
         public async Task<ActionResult<ServiceResponse<List<EmployeeModel>>>> UpdateEmployee(EmployeeModel newEmployee)
         {
-            return Ok(await _employeeService.UpdateEmployee(newEmployee));
+            var result = await _employeeService.UpdateEmployee(newEmployee);
+            return result.Sucesso ? Ok(result) : NotFound(result);
         }
         [HttpDelete]
         public async Task<ActionResult<ServiceResponse<List<EmployeeModel>>>> DeleteEmployee(int id)
         {
-           /// ServiceResponse<List<EmployeeModel>> serviceResponse = await _employeeService.DeleteEmployee(id);
-            return Ok(await _employeeService.DeleteEmployee(id));
+            var result = await _employeeService.DeleteEmployee(id);
+            return result.Sucesso ? Ok(result) : NotFound(result);
+
         }
     }
 }
